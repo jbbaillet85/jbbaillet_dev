@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    postgres:
+        container_name: jbbaillet_dev_postgres_container_63401
+        image: postgres:15
+        working_dir: /app
+        restart: always
+        ports:
+            - "63401:5432"
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: db_baillet
+        volumes:
+            - "postgres_jbbaillet_dev_63401:/var/lib/postgresql"
+
+volumes:
+    postgres_jbbaillet_dev_63401:
